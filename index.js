@@ -7,7 +7,37 @@ const colors = [
   '#795548',
 ];
 
+const refs = {
+  startBtn: document.querySelector('[data-action="start"]'),
+  stopBtn: document.querySelector('[data-action="stop"]')
+};
+
+let colorId = null;
+
+refs.startBtn.addEventListener('click', onClickStartChangeColor);
+refs.stopBtn.addEventListener('click', onClickStopChangeColor);
 
 const randomIntegerFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
+
+const changeBtnStatus = (remove, add) => {
+  refs.startBtn.disabled = add;
+  refs.stopBtn.disabled = remove;
+};
+
+function onClickStartChangeColor() {
+  changeBtnStatus(false, true);
+  refs.startBtn.classList.add("is-active");
+
+  colorId = setInterval(() => {
+    document.body.style.backgroundColor =
+      colors[randomIntegerFromInterval(0, colors.length - 1)]
+  }, 500);
+};
+
+function onClickStopChangeColor() {
+  changeBtnStatus(true, false);
+  clearInterval(colorId);
+  refs.startBtn.classList.remove("is-active")
+}
