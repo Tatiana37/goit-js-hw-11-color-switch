@@ -1,0 +1,24 @@
+html {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+button {
+  font-family: "Georgia", "Times New Roman", "Times", serif;
+  font-size: 35px;
+  letter-spacing: normal;
+  padding: 15px;
+  border: 2px solid rgb(124, 148, 118);
+  border-radius: 5px;
+  margin-top: 50px;
+  margin-right: 20px;
+  align-items: center;
+  cursor: pointer;
+  color: rgb(246, 255, 127);
+  background-color: rgb(146, 227, 238);
+}
+
+.is-active {
+  color: rgb(146, 227, 238);
+  background-color: rgb(246, 255, 127);
+}
