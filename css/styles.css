@@ -21,7 +21,8 @@ button {
   transition: 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-button:hover {
+button:hover,
+button:focus {
   color: rgb(246, 255, 127);
   background-color: #20b8cc;
 }
