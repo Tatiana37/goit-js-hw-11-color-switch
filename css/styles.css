@@ -17,9 +17,16 @@ button {
   cursor: pointer;
   color: rgb(246, 255, 127);
   background-color: rgb(146, 227, 238);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: 250ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.is-active {
-  color: rgb(146, 227, 238);
+button:hover {
+  color: rgb(246, 255, 127);
+  background-color: #20b8cc;
+}
+
+.clicked {
+  color: rgb(32, 184, 204);
   background-color: rgb(246, 255, 127);
 }

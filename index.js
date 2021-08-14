@@ -28,7 +28,9 @@ const changeBtnStatus = (remove, add) => {
 
 function onClickStartChangeColor() {
   changeBtnStatus(false, true);
-  refs.startBtn.classList.add("is-active");
+  refs.startBtn.classList.add("clicked");
+  refs.stopBtn.classList.remove("clicked");
+
 
   colorId = setInterval(() => {
     document.body.style.backgroundColor =
@@ -39,5 +41,6 @@ function onClickStartChangeColor() {
 function onClickStopChangeColor() {
   changeBtnStatus(true, false);
   clearInterval(colorId);
-  refs.startBtn.classList.remove("is-active")
+  refs.startBtn.classList.remove("clicked");
+  refs.stopBtn.classList.add("clicked");
 }
